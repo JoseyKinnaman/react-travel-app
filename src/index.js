@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducer from './reducers/travel-reducer'
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
+import middlewareTravel from './middleware/middleware-travel';
+
 
 // import * as serviceWorker from './serviceWorker';
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(middlewareTravel, thunkMiddleware));
 
 ReactDOM.render(
   <Provider store={store} >
