@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import TravelControl from './TravelControl'
 
 
-
 function App() {
   return (
 
