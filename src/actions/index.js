@@ -17,7 +17,7 @@ export const getDestinationsFailure = (error) => ({
 export const makeApiCall = () => {
   return dispatch => {
     dispatch(requestDestinations);
-    return fetch(`https://animal-shelter-api.herokuapp.com/pets/random`)
+    return fetch(`https://travel-api-rails.herokuapp.com/`)
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
