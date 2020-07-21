@@ -8,7 +8,7 @@ function App() {
 
     <React.Fragment>
       <div className="container">
-        <h1>NiJo Travel Co.</h1>
+        <h1>Open Air Travel Co.</h1>
         <TravelControl />
       </div>
     </React.Fragment>
