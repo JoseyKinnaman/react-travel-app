@@ -1,6 +1,6 @@
 # Travel App 
 
-#### By: Nitun Datta and Jozy Kinnaman
+#### By: Jozy Kinnaman
 _July 20, 2020_
 
 ## Description
@@ -39,9 +39,6 @@ _ A React.js and Redux application that uses a queriable Api  that will allow th
 | The user view a random selection of travel reviews | 'http://localhost:5000/{country}{city}{review}{RANDOM}' | 'List of random reviews' |
 
 
-- Deploy API? []
-- Deploy App to netlify []
-- Authorizaation with firebase? []
 
 ### Known Bugs
 
@@ -67,4 +64,4 @@ No bugs have been identified at the time of this update.
 ### License
 ### This software is licensed under the MIT license.
 
-### Copyright (c) 2020 Nitun Datta // Jozy Kinnaman
+### Copyright (c) 2020 Jozy Kinnaman
