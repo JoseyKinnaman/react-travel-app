@@ -27,5 +27,9 @@ export const makeApiCall = () => {
       .catch((error) => {
         dispatch(getDestinationsFailure(error));
       });
-  }
-};
+    }
+  };
+
+  export const toggleForm = () => ({
+    type: c.TOGGLE_FORM
+  });

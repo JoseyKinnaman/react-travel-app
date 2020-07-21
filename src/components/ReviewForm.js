@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ReusableForm from './ReusuableForm'
+import ReusableForm from './ReusableForm'
+
+
+// do I want to treat this more like an update?
 
 function ReviewForm(props) {
   const ReviewFormStyles = {
@@ -14,7 +17,7 @@ function ReviewForm(props) {
 
   function handleReviewFormSubmission(event) {
     event.preventDefault();
-    props.onReviewCreation({ content: event.target.content.value, author: event.target.author.value, place: event.target.place.value, id: v4() });
+    props.onReviewCreation({ content: event.target.content.value, author: event.target.author.value, place: event.target.place.value });
   }
   return (
     <React.Fragment>
