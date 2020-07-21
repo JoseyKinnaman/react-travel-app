@@ -6,6 +6,7 @@ import DestinationDetail from './Destination'
 import PropTypes from "prop-types";
 import * as a from './../actions'
 import ReviewForm from './ReviewForm';
+import Destination from './Destination';
 
 class TravelControl extends React.Component {
   constructor(props) {
@@ -54,35 +55,24 @@ class TravelControl extends React.Component {
       currentlyVisibleState = (<ReviewForm onReviewCreation={this.handleAddingReviewToList}/>);
       buttonText = "Return to Destination List"
     } else {
-      currentlyVisibleState = (<DestinationList />)
-    const { error, isLoading, destinations } = this.props;
-    if (error) {
-      return <React.Fragment>Error</React.Fragment>
-    } else if (isLoading) {
-      return <React.Fragment>Is Loding...</React.Fragment>
-    } else {
-      return (
-        <React.Fragment>
-            <h3 className="card-header">Destinations:</h3>
-            <ul>
-              {destinations.map((destination, index) =>
-                <div class="card text-white bg-dark mb-2">
-                  <li key={index}>
-                    <h1 className="card-header">{destination.place}</h1>
-                    <div className="card-body">
-                      <h5 class="card-title"><em>written by: </em>{destination.author}</h5>
-                      <p className="card-text"><em>Review: </em>{destination.content}</p>
-                    </div>
-                  </li>
-                </div>
-              )}
-            </ul>
-        </React.Fragment>
-      );
+      currentlyVisibleState = (<DestinationList destinations={this.props}  />);
+      console.log(this.props.com)
     }
-    }
+    return (
+      <React.Fragment>
+        {currentlyVisibleState}
+        <button className="btn btn-dark" onClick={this.handleClick}>{buttonText}</button>
+      </React.Fragment>
+    );
   }
 }
+
+TravelControl.propTypes = {
+  destinations: PropTypes.object,
+  isLoading: PropTypes.string,
+  error: PropTypes.string,
+};
+
 const mapStateToProps = state => {
   return {
     destinations: state.destinations,
@@ -91,4 +81,6 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(TravelControl);
+ TravelControl = connect(mapStateToProps)(TravelControl);
+
+export default TravelControl;
