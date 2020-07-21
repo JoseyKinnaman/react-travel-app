@@ -29,12 +29,12 @@ class TravelControl extends React.Component {
             <hr />
             {destinations.desc} */}
               {destinations.map((destination, index) =>
-                <div class="card text-white bg-dark mb-3">
+                <div class="card text-white bg-dark mb-2">
                   <li key={index}>
-                    <div className="card-header">{destination.place}</div>
+                    <h1 className="card-header">{destination.place}</h1>
                     <div className="card-body">
-                      <h5 class="card-title">{destination.author}</h5>
-                      <p className="card-text">{destination.content}</p>
+                      <h5 class="card-title"><em>written by: </em>{destination.author}</h5>
+                      <p className="card-text"><em>Review: </em>{destination.content}</p>
                     </div>
                   </li>
                 </div>
